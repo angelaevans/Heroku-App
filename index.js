@@ -16,7 +16,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/db', function (request, response) {
-  var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7"
+  /*var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7"
   console.log(process.env);
   pg.connect(connectStr, function(err, client, done) {
    client.query('SELECT * FROM caught_users', function(err, result) {
@@ -24,16 +24,16 @@ app.get('/db', function (request, response) {
       if(err) return console.error(err);
       console.log(result.rows);
 		});
-	});
-  /*pg.connect(connectStr, function(err, client, done) {
-    client.query('SELECT * FROM caught_users', function(err, result) {
+	});*/
+  pg.connect(process.env.HEROKU_POSTGRESQL_PUCE_URL, function(err, client, done) {
+    client.query('SELECT * FROM test_table', function(err, result) {
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
       else
        { response.render('pages/db', {results: result.rows} ); }
     });
-  });*/
+  });
 })
 
 app.listen(app.get('port'), function() {
