@@ -26,6 +26,7 @@ app.get('/db', function (request, response) {
 		});
 	});*/
   pg.connect(process.env.HEROKU_POSTGRESQL_PUCE_URL, function(err, client, done) {
+	  console.log(process.env.HEROKU_POSTGRESQL_PUCE_URL);
     client.query('SELECT * FROM test_table;', function(err, result) {
       done();
       if (err)
