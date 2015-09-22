@@ -26,8 +26,8 @@ app.get('/db', function (request, response) {
 		});
 	});*/
   pg.connect(connectStr, function(err, client, done) {
-	  console.log(process.env.HEROKU_POSTGRESQL_PINK_URL);
-    client.query('SELECT * FROM test_table;', function(err, result) {
+	  
+    client.query('SELECT * FROM caught_users', function(err, result) {
       done();
       if (err)
        { console.error(err); response.send("Error " + err); }
