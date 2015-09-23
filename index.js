@@ -48,7 +48,7 @@ app.post('/store', function(req, res){
 	var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7?ssl=true";
 	pg.connect(connectStr, function(err, client, done) {
 	  
-		client.query('INSERT INTO caught_users VALUES (0,' + email + ', ' + password + ')', function(err, result) {
+		client.query('INSERT INTO caught_users(id, email, password) VALUES($1, $2, $3)', [0, email, name],function(err, result) {
 		  done();
 		  if (err)
 		   { console.error(err); response.send("Error " + err); }
