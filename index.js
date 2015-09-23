@@ -47,11 +47,9 @@ app.post('/store', function(req, res){
 		  if (err)
 		   { console.error(err); res.render('pages/oops'); }
 		  else
-		   { res.render('pages/oops'); }
+		   { console.log("should render here?");res.render('pages/oops'); }
 		});
 	});
-	
-	/*res.end("yes");*/
 });
 
 app.listen(app.get('port'), function() {
