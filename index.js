@@ -4,7 +4,7 @@ var pg = require('pg');
 var bodyParser = require('body-parser');
 var app = express();
 
-
+var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7?ssl=true";
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -21,7 +21,6 @@ app.get('/', function(request, response) {
 
 app.get('/db', function (request, response) {
   console.log("herro?");
-  var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7?ssl=true";
   pg.connect(connectStr, function(err, client, done) {
 	  
     client.query('SELECT * FROM caught_users', function(err, result) {
@@ -34,10 +33,6 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.get('/oops', function (request, response){
-	response.render('pages/oops');
-});
-
 app.post('/store', function(req, res){
 	console.log("attempting to insert");
 	var email = req.body.email;
@@ -45,15 +40,14 @@ app.post('/store', function(req, res){
 	var password = req.body.password;
 	console.log(password);
 	
-	var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7?ssl=true";
 	pg.connect(connectStr, function(err, client, done) {
 	  
-		client.query('INSERT INTO caught_users(id, email, password) VALUES($1, $2, $3)', [0, email, name],function(err, result) {
+		client.query('INSERT INTO caught_users(id, email, password) values($1, $2, $3)', [0, email, name], function(err, result) {
 		  done();
 		  if (err)
-		   { console.error(err); response.send("Error " + err); }
+		   { console.error(err); response.send("Error " + err); response.render('pages/oops'); }
 		  else
-		   { response.render('pages/db', {results: result.rows} ); }
+		   { response.render('pages/oops'); }
 		});
 	});
 	
