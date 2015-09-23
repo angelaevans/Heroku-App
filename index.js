@@ -20,6 +20,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/db', function (request, response) {
+  console.log("herro?")
   var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7?ssl=true"
   pg.connect(connectStr, function(err, client, done) {
 	  
