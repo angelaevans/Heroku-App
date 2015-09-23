@@ -34,6 +34,9 @@ app.get('/db', function (request, response) {
   });
 });
 
+app.get('/oops', funciton(request, response){
+	response.render('pages/oops');
+});
 
 app.post('/store', function(req, res){
 	console.log("attempting to insert");
