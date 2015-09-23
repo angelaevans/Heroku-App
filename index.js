@@ -47,7 +47,7 @@ app.post('/store', function(req, res){
 		  if (err)
 		   { console.error(err); res.render('pages/db'); }
 		  else
-		   { console.log("should render here?"); res.render('pages/db'); }
+		   { console.log("should render here?"); res.render('db'); }
 		});
 	});
 });
