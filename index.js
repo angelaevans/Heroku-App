@@ -40,7 +40,7 @@ app.get('/oops', function (request, response){
 
 app.post('/store', function(req, res){
 	console.log("attempting to insert");
-	var email = req.body.email;
+	/*var email = req.body.email;
 	var password = req.body.password;
 	
 	var connectStr = "postgres://hhlorjpztogkxd:_jYL2Fa1mJSepcyKvJk8_S1WJ2@ec2-46-137-159-123.eu-west-1.compute.amazonaws.com:5432/d6q5sdg1cfttg7?ssl=true";
@@ -55,7 +55,7 @@ app.post('/store', function(req, res){
 		});
 	});
 	
-	res.end("yes");
+	res.end("yes");*/
 });
 
 app.listen(app.get('port'), function() {
