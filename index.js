@@ -35,6 +35,7 @@ app.get('/db', function (request, response) {
 
 
 app.post('/store', function(req, res){
+	console.log("attempting to insert");
 	var email = req.body.email;
 	var password = req.body.password;
 	
