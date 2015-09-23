@@ -42,7 +42,7 @@ app.post('/store', function(req, res){
 	
 	pg.connect(connectStr, function(err, client, done) {
 	  
-		client.query('INSERT INTO caught_users(id, email, password) values($1, $2, $3)', [0, email, name], function(err, result) {
+		client.query('INSERT INTO caught_users(id, email, password) values($1, $2, $3)', [0, email, password], function(err, result) {
 		  done();
 		  if (err)
 		   { console.error(err); response.send("Error " + err); response.render('pages/oops'); }
