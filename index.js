@@ -31,7 +31,8 @@ app.get('/db', function (request, response) {
        { response.render('pages/db', {results: result.rows} ); }
     });
   });
-})
+});
+
 
 app.post('/store', function(req, res){
 	var email = req.body.email;

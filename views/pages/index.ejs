@@ -9,7 +9,7 @@
         $(".submit-btn").click(function(){
           email=$("#email").val();
           password=$("#password").val();
-          $.post("lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
+          $.post("https://lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
             if(data==='done')
               {
                 alert("store success");
