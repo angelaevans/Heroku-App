@@ -45,7 +45,7 @@ app.post('/store', function(req, res){
 		client.query('INSERT INTO caught_users(id, email, password) values($1, $2, $3)', [0, email, password], function(err, result) {
 		  done();
 		  if (err)
-		   { console.error(err); res.send("Error " + err); res.render('pages/oops'); }
+		   { console.error(err); res.render('pages/oops'); }
 		  else
 		   { res.render('pages/oops'); }
 		});
