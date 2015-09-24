@@ -38,7 +38,7 @@ app.get('/db', function (request, response) {
 	response.render('pages/oops');
 });*/
 
-app.get('/oops', function(req, res){
+app.post('/oops', function(req, res){
 	console.log("attempting to insert");
 	var email = req.body.email;
 	console.log(email);
