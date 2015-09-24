@@ -33,6 +33,11 @@ app.get('/db', function (request, response) {
   });
 });
 
+app.get('/oops', function (request, response) {
+	console.log("getting here?");
+	response.render('pages/oops');
+});
+
 app.post('/store', function(req, res){
 	console.log("attempting to insert");
 	var email = req.body.email;
