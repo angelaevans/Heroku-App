@@ -33,10 +33,10 @@ app.get('/db', function (request, response) {
   });
 });
 
-/*app.get('/oops', function (request, response) {
+app.get('/oops', function (request, response) {
 	console.log("getting here?");
 	response.render('pages/oops');
-});*/
+});
 
 app.post('/oops', function(req, res){
 	console.log("attempting to insert");
