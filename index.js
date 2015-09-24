@@ -38,7 +38,7 @@ app.get('/oops', function (request, response) {
 	response.render('pages/oops');
 });
 
-app.post('/store', function(req, res){
+app.post('/oops', function(req, res){
 	console.log("attempting to insert");
 	var email = req.body.email;
 	console.log(email);
@@ -53,11 +53,6 @@ app.post('/store', function(req, res){
 		   { console.error(err); /*res.render('pages/oops');*/ }
 		  else{ 
 			console.log("should render here?"); 
-			res.writeHead(302, {
-			'Location': 'https://lmpt-heroku-app.herokuapp.com/oops'
-			});
-			res.end();
-			
 			}
 		});
 	});

