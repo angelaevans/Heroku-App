@@ -5,7 +5,6 @@
 </head>
 <script>
 	$(document).ready(function(){
-		console.log("readying to grab infos");
         var email,password;
         $("#signin").click(function(){
           email=$("#email").val();
@@ -15,12 +14,11 @@
             if(data==='done')
               {
                 console.log("store success");
-				$("body").html("hi");
               }
           });
-		  
+		  $("body").html("hi");
         });
-      });
+     });
 </script>
 
 <body>
