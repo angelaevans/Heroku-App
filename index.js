@@ -57,7 +57,7 @@ app.get('/oops', function(req, res){
 		});
 	});
 	console.log("getting here?");
-	response.render('pages/oops');
+	res.render('pages/oops');
 	
 });
 
