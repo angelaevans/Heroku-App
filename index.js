@@ -57,8 +57,7 @@ app.post('/oops', function(req, res){
 		});
 	});
 	console.log("getting here?");
-	res.render('pages/oops');
-	
+	res.send(200);
 });
 
 app.listen(app.get('port'), function() {
