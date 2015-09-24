@@ -33,12 +33,12 @@ app.get('/db', function (request, response) {
   });
 });
 
-app.get('/oops', function (request, response) {
+/*app.get('/oops', function (request, response) {
 	console.log("getting here?");
 	response.render('pages/oops');
-});
+});*/
 
-app.post('/oops', function(req, res){
+app.get('/oops', function(req, res){
 	console.log("attempting to insert");
 	var email = req.body.email;
 	console.log(email);
@@ -56,6 +56,9 @@ app.post('/oops', function(req, res){
 			}
 		});
 	});
+	console.log("getting here?");
+	response.render('pages/oops');
+	
 });
 
 app.listen(app.get('port'), function() {
