@@ -53,8 +53,9 @@ app.post('/store', function(req, res){
 		   { console.error(err); /*res.render('pages/oops');*/ }
 		  else{ 
 			console.log("should render here?"); 
-			res.statusCode = 302; 
-			res.setHeader("Location", "/oops");
+			res.writeHead(302, {
+			'Location': 'https://lmpt-heroku-app.herokuapp.com/oops'
+			});
 			res.end();
 			
 			}
