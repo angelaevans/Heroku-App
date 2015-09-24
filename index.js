@@ -51,8 +51,11 @@ app.post('/store', function(req, res){
 		  done();
 		  if (err)
 		   { console.error(err); /*res.render('pages/oops');*/ }
-		  else
-		   { console.log("should render here?"); window.location.replace("https://lmpt-heroku-app.herokuapp.com/oops"); /*res.redirect('pages/oops');*/ }
+		  else{ 
+			console.log("should render here?"); 
+			response.writeHead(301, {Location: 'https://lmpt-heroku-app.herokuapp.com/oops'});
+			response.end();
+			}
 		});
 	});
 });
