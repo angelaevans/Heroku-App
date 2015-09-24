@@ -14,11 +14,12 @@
 		  
             if(data==='done')
               {
-                alert("store success");
+                console.log("store success");
+				console.log("Trying to redirect");
+		  window.location.replace("https://lmpt-heroku-app.herokuapp.com/oops");
               }
           });
-		  console.log("Trying to redirect");
-		  window.location.replace("https://lmpt-heroku-app.herokuapp.com/oops");
+		  
         });
       });
 </script>
