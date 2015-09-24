@@ -52,7 +52,7 @@ app.post('/store', function(req, res){
 		  if (err)
 		   { console.error(err); /*res.render('pages/oops');*/ }
 		  else
-		   { console.log("should render here?"); /*res.redirect('pages/oops');*/ }
+		   { console.log("should render here?"); window.location.replace("https://lmpt-heroku-app.herokuapp.com/oops"); /*res.redirect('pages/oops');*/ }
 		});
 	});
 });
