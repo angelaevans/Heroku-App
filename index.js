@@ -20,7 +20,6 @@ app.get('/', function(request, response) {
 });
 
 app.get('/db', function (request, response) {
-  console.log("herro?");
   pg.connect(connectStr, function(err, client, done) {
 	  
     client.query('SELECT * FROM caught_users', function(err, result) {
