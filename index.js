@@ -56,7 +56,7 @@ app.post('/store', function(req, res){
 		});
 	});
 	console.log("getting here?");
-	res.sendStatus(200);
+	//res.sendStatus(200);
 });
 
 app.listen(app.get('port'), function() {
